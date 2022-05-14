@@ -30,7 +30,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='pt-12'>
-                <p className='text-center'><small>Copyright © {new Date().getFullYear()} - All right reserved</small></p>
+                <p className='text-center'><small>Copyright © {new Date().getFullYear()} - All Rights Reserved</small></p>
             </div>
         </footer>
     );
