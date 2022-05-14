@@ -11,9 +11,9 @@ const Info = () => {
 
     return (
         <section className='grid grid-cols-1 lg:grid-cols-3 gap-5 my-20'>
-            <InfoCard cardTitle="Opening Hours" img={clock} bgClass={bgPrimary}></InfoCard>
-            <InfoCard cardTitle="Our Locations" img={marker} bgClass={bgAccent}></InfoCard>
-            <InfoCard cardTitle="Contact Us" img={phone} bgClass={bgPrimary}></InfoCard>
+            <InfoCard cardTitle="Opening Hours" img={clock} bgclassName={bgPrimary}></InfoCard>
+            <InfoCard cardTitle="Our Locations" img={marker} bgclassName={bgAccent}></InfoCard>
+            <InfoCard cardTitle="Contact Us" img={phone} bgclassName={bgPrimary}></InfoCard>
         </section>
     );
 };
