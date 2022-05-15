@@ -1,9 +1,21 @@
 import React from 'react';
 import { format } from 'date-fns';
 
-const BookingModal = ({ date, treatment }) => {
+const BookingModal = ({ date, treatment, setTreatment }) => {
 
-    const { name, slots } = treatment;
+    const { _id, name, slots } = treatment;
+
+    const handleBooking = event => {
+        event.preventDefault();
+
+        const slot = event.target.slot.value;
+        // const name = event.target.name.value;
+        const phone = event.target.phone.value;
+        const email = event.target.email.value;
+
+        console.log(_id, name, slot);
+        setTreatment(null);
+    }
 
     return (
         <div>
@@ -12,16 +24,16 @@ const BookingModal = ({ date, treatment }) => {
                 <div class="modal-box">
                     <label for="booking-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 class="font-bold text-lg text-accent">{name}</h3>
-                    <form className='grid grid-cols-1 gap-3 justify-items-center mt-5'>
+                    <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 justify-items-center mt-5'>
                         <input type="text" disabled value={format(date, 'PP')} class="input input-bordered w-full max-w-xs" />
-                        <select class="select select-bordered w-full max-w-xs">
-                            <option disabled selected>Who shot first?</option>
-                            <option>Han Solo</option>
-                            <option>Greedo</option>
+                        <select name='slot' class="select select-bordered w-full max-w-xs">
+                            {
+                                slots.map(slot => <option value={slot}>{slot}</option>)
+                            }
                         </select>
-                        <input type="text" placeholder="Full Name" class="input input-bordered w-full max-w-xs" />
-                        <input type="text" placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
-                        <input type="email" placeholder="Email" class="input input-bordered w-full max-w-xs" />
+                        <input type="text" name='name' placeholder="Full Name" class="input input-bordered w-full max-w-xs" />
+                        <input type="text" name='phone' placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
+                        <input type="email" name='email' placeholder="Email" class="input input-bordered w-full max-w-xs" />
                         <input type="submit" value="SUBMIT" class="btn btn-accent w-full max-w-xs" />
                     </form>
                 </div>
