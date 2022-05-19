@@ -10,9 +10,9 @@ const ContactUs = () => {
                 <h4 className='text-xl text-primary font-bold '>Contact Us</h4>
                 <p className='text-white text-3xl'>Stay connected with us</p>
                 <form className='my-5'>
-                    <input type="email" name='email' class="form-input w-52 lg:w-5/12 px-2 py-2 my-2 rounded-md " placeholder='Email Address' />
+                    <input type="email" name='email' className="form-input w-52 lg:w-5/12 px-2 py-2 my-2 rounded-md " placeholder='Email Address' />
                     <br />
-                    <input type="text" name='subject' class="form-input w-52 lg:w-5/12 px-2 py-2 my-3 rounded-md " placeholder='Subject' />
+                    <input type="text" name='subject' className="form-input w-52 lg:w-5/12 px-2 py-2 my-3 rounded-md " placeholder='Subject' />
                     <br />
                     <textarea name="message" id="" className='w-52 lg:w-5/12 pb-12 my-2 rounded-md' placeholder='Your message'></textarea>
                     <br />
