@@ -8,6 +8,7 @@ const useToken = user => {
         const currentUser = { email: email };
 
         if (email) {
+            console.log('email', email);
             fetch(`https://safe-beach-87868.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
